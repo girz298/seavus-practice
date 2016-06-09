@@ -1,19 +1,30 @@
-<!doctype html>
-<html ng-app="employees">
+<!DOCTYPE html>
+<html>
 <head>
-    <title>Hello AngularJS</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <style>
+        .navbar { border-radius:0; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
     <script src="/js/app.js"></script>
 </head>
 
-<body>
-<div ng-controller="EmployeesController">
-    <div ng-repeat="employee in employees track by $index">
-        <p>First name: {{employee.firstName}}</p>
-        <p>Surname: {{employee.lastName}}</p>
-        <p>Description: {{employee.description}}</p>
-        <br>
+<body ng-app="demoApp">
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="http://localhost:8080/api">API</a>
     </div>
+    <ul class="nav navbar-nav">
+        <li><a ui-sref="employees">Employees</a></li>
+        <li><a ui-sref="projects">Projects</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
 </div>
+
 </body>
 </html>

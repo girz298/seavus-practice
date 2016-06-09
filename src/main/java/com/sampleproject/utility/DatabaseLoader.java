@@ -1,7 +1,9 @@
 package com.sampleproject.utility;
 
 import com.sampleproject.models.Employee;
+import com.sampleproject.models.Project;
 import com.sampleproject.repositories.EmployeeRepository;
+import com.sampleproject.repositories.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -11,18 +13,24 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DatabaseLoader implements CommandLineRunner {
-
-    private final EmployeeRepository repository;
+    @Autowired
+    private final EmployeeRepository employeeRepository;
+    @Autowired
+    private final ProjectRepository projectRepository;
 
     @Autowired
-    public DatabaseLoader(EmployeeRepository repository) {
-        this.repository = repository;
+    public DatabaseLoader(EmployeeRepository employeeRepository, ProjectRepository projectRepository) {
+        this.employeeRepository = employeeRepository;
+        this.projectRepository = projectRepository;
     }
 
     @Override
     public void run(String... strings) throws Exception {
-        this.repository.save(new Employee("Frodo", "Baggins", "ring bearer"));
-        this.repository.save(new Employee("Bilbo", "Baggins", "tr-8r"));
-        this.repository.save(new Employee("Swagnalf", "The white", "shitty wizard"));
+        this.employeeRepository.save(new Employee("Frodo", "Baggins", "ring bearer"));
+        this.employeeRepository.save(new Employee("Bilbo", "Baggins", "tr-8r"));
+        this.employeeRepository.save(new Employee("Swagnalf", "The white", "shitty wizard"));
+        this.projectRepository.save(new Project("Proj1"));
+        this.projectRepository.save(new Project("Proj2"));
+        this.projectRepository.save(new Project("Proj3"));
     }
 }
