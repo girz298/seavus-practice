@@ -1,9 +1,9 @@
-package com.sampleproject.utility;
+package com.seavus.practice.newsportal.utility;
 
-import com.sampleproject.models.Employee;
-import com.sampleproject.models.Project;
-import com.sampleproject.repositories.EmployeeRepository;
-import com.sampleproject.repositories.ProjectRepository;
+import com.seavus.practice.newsportal.models.Employee;
+import com.seavus.practice.newsportal.models.Project;
+import com.seavus.practice.newsportal.repositories.EmployeeRepository;
+import com.seavus.practice.newsportal.repositories.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

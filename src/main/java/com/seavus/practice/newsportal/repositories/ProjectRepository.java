@@ -1,6 +1,6 @@
-package com.sampleproject.repositories;
+package com.seavus.practice.newsportal.repositories;
 
-import com.sampleproject.models.Project;
+import com.seavus.practice.newsportal.models.Project;
 import org.springframework.data.repository.CrudRepository;
 
 /**

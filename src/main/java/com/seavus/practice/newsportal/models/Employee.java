@@ -1,4 +1,4 @@
-package com.sampleproject.models;
+package com.seavus.practice.newsportal.models;
 
 import lombok.Data;
 

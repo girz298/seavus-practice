@@ -1,4 +1,4 @@
-package com.sampleproject;
+package com.seavus.practice.newsportal;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
