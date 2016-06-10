@@ -24,5 +24,9 @@ public class User {
 
     private User() {}
 
-
+    public User(String name, String surname, String profileImageURL) {
+        this.name = name;
+        this.surname = surname;
+        this.profileImageURL = profileImageURL;
+    }
 }
