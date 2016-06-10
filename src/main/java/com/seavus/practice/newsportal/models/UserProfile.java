@@ -31,6 +31,9 @@ public class UserProfile {
     @OneToMany(mappedBy = "author", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Article> articles = new ArrayList<>();
 
+    @OneToMany(mappedBy = "commentator", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Comment> leftComments = new ArrayList<>();
+
     public UserProfile(String name, String surname, String profileImageURL, User user) {
         this.name = name;
         this.surname = surname;

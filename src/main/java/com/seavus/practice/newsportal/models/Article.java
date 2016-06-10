@@ -5,6 +5,8 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by MK on 10.06.2016.
@@ -27,8 +29,11 @@ public class Article {
                     CascadeType.MERGE,
                     CascadeType.REFRESH
             })
-    @JoinColumn(name = "author_login")
+    @JoinColumn(name = "user_id")
     private UserProfile author;
+
+    @OneToMany(mappedBy = "relatedToArticle", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Comment> commentaries = new ArrayList<>();
 
     public Article(String header, String text, UserProfile author) {
         this.header = header;
