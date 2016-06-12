@@ -37,17 +37,7 @@ public class Article {
     @OneToMany(mappedBy = "relatedToArticle", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Comment> commentaries = new ArrayList<>();
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade =
-            {
-                    CascadeType.DETACH,
-                    CascadeType.MERGE,
-                    CascadeType.REFRESH
-            })
-    @JoinTable(
-            name = "article_tags",
-            joinColumns=@JoinColumn(name = "article_id"),
-            inverseJoinColumns = @JoinColumn(name="tag_name")
-    )
+    @ManyToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Tag> articleTags = new ArrayList<>();
 
     public Article(String header, String text, UserProfile author, LocalDateTime lastEditedOn) {

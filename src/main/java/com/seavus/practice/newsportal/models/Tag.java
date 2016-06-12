@@ -18,7 +18,17 @@ public class Tag {
     @Id
     private String text;
 
-    @ManyToMany(mappedBy = "articleTags", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade =
+            {
+                    CascadeType.DETACH,
+                    CascadeType.MERGE,
+                    CascadeType.REFRESH
+            })
+    @JoinTable(
+            name = "article_tags",
+            joinColumns=@JoinColumn(name = "tag_text"),
+            inverseJoinColumns = @JoinColumn(name="article_id")
+    )
     private List<Article> belongsToArticles = new ArrayList<>();
 
     public Tag(String text){
