@@ -45,7 +45,10 @@ public class DatabaseLoader implements CommandLineRunner {
         User user = new User("user", "password", null, userProfile);
         userRepository.save(user);
         userProfileRepository.save(userProfile);
-        Article article = new Article("header", "test", userProfile, LocalDateTime.now());
+        Article article = new Article("EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.", userProfile, LocalDateTime.now());
         List<Comment> articleComments = new ArrayList<>();
         articleComments.add(new Comment("amazing text1", LocalDateTime.now(), userProfile, article));
         articleComments.add(new Comment("amazing text2", LocalDateTime.now(), userProfile, article));

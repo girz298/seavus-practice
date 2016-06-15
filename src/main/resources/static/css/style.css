@@ -1,0 +1,158 @@
+﻿@grid-columns: 30;
+header
+{
+    margin: 0 0 40px;
+    height: 60px;
+    border-bottom:0px solid black;
+    background: #eff0f4;
+}
+body
+{
+   background: #d7dce2; 
+}
+.page-header
+{
+    margin: inherit;
+    height: 60px;
+    border-bottom:0px solid black;
+}
+.page-header> a > img
+{
+    margin: 15px 0 10px ;
+    height :26px;
+    width :27px;
+    
+}
+.navbar-link
+{
+    margin: inherit;
+    font-family: 'Arial';
+    font-size: 381px 32px;
+    color: black;
+}
+.navbar-link:hover{
+    color:black;
+}
+.text-block
+{
+    padding: 15px 40px 0 80px;
+    margin: -30px 0 30px;
+}
+.navbar-form .form-control
+{
+    width: 700px;
+}
+.navbar-form
+{
+    margin: 15px 0 10px;
+}
+.navbar-brand>img
+{
+    height:82px;
+    width:90px;
+}
+.navbar-fixed-bottom
+{
+        background: #eff0f4;
+}
+.affix
+{
+    width: 100%;
+}
+@font-face
+{
+    font-family: 'Goudy stout';
+    src: url('fonts/GOUDYSTO.ttf') format('truetype')
+}
+@font-face
+{
+    font-family:'Tekton pro';
+    src:url('fonts/Tekton Pro Bold.ttf')format('truetype')
+}
+h1.navbar-text
+{
+    font-family:'Goudy Stout';
+    font-size: 30pt;
+    font-style: oblique;
+    font-weight: bold;
+    margin:30px 0;
+}
+.navbar
+{
+    height:100px;
+}
+.btn-group-justified
+{
+    width: 700px;
+    left:250px;
+    top: 40px;
+    
+}
+.btn-default
+{
+    font-family:'Arial';
+    font-size:13pt;
+    background: #eff0f4;
+}
+
+.jumbotron>h1
+{
+    font-family: 'Tekton Pro';
+    font-style: italic;
+    font-size: 64pt;
+    font-weight: bold;
+    color:#d0cdcd;
+    
+}
+.news-block
+{
+    width: 1100px;
+    height: 300px;
+    border: 0.5px solid black;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.news-block >img
+{
+    float:left;
+    width: 250px;
+    height:200px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.news-block >h2
+{
+    font-family: 'Arial';
+    font-size: 24pt;
+    font-weight: bold;
+    text-align: center;
+}
+.news-block >h5
+{
+    font-family: 'Arial';
+    font-size: 13pt;
+    text-align: left;
+}
+.news-block >a>h3
+{
+    font-family: 'Arial';
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 15px;
+}
+.news-block >a
+{
+    color:black;
+}
+.news-block >a:hover
+{
+    color:black;
+}
+.actual-news
+{
+    width: 300px;
+    position: absolute;
+    margin-top: -950px;
+    margin-left: 1180px;
+}
