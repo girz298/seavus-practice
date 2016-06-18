@@ -1,0 +1,82 @@
+.header-page
+{
+    margin:absolute;
+}
+.exit
+{
+    margin:relative;
+    margin-top: 10px;
+    height :20px;
+    width: 60px;
+    font-weight: bold;
+}
+.text-block
+{
+    margin:relative;
+    width:90px;
+    height: 26px;
+    margin-left: 30px;
+    margin-top: -10px;
+    margin-right: 70px;
+}
+.text-link
+{
+    margin:relative;
+    margin-top: -20px;
+    width: 500px;
+}
+.text-block>a
+{
+    margin-right: -30px;
+}
+.navbar-form
+{
+    margin:absolute;
+    margin-top: -22px;
+}
+.news >h2, .preview>h2
+{
+    font-weight: bold;
+    text-align: left;
+    font-size: 30pt;
+}
+.form, select
+{
+    position:absolute;
+    left:  150px;
+    width: 320px;
+    
+}
+select
+{
+    height: 30px;
+    margin-left: 40px;
+    border:1px solid graytext;
+    background: #ebeff1; 
+    box-shadow: 0 0 10px graytext;
+    border-radius: 3px;
+}
+textarea
+{
+    margin-left: 40px;
+    border:1px solid graytext;
+    background: #ebeff1; 
+    box-shadow: 0 0 10px graytext;
+    border-radius: 3px;
+}
+label, .title
+{
+    position:relative;
+   font-weight:normal;
+   font-size: 18pt;
+   width: 240px;
+   height:30px; 
+}
+.title
+{
+   font-weight:normal;
+   font-size: 18pt;
+   width: 240px;
+   height:30px; 
+}
+
