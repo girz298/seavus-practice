@@ -41,7 +41,7 @@ public class Article {
     @OneToMany(mappedBy = "leftOnArticle", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Like> likes = new ArrayList<>();
 
-    @OneToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Tag> articleTags = new ArrayList<>();
 
     public Article(String header, String text, UserProfile author, LocalDateTime lastEditedOn) {

@@ -1,0 +1,4 @@
+INSERT INTO `locale` (`culture`) VALUES ('en');
+INSERT INTO `locale` (`culture`) VALUES ('ru');
+INSERT INTO `control` (`locale_culture`,`actual_news`,`authorization`,`culture`,`economics`,`look_for`,`others`,`politics`,`read_full`,`registration`,`search`,`society`,`sport`) VALUES ('en','Actual news','Authorization','Culture','Economics','Seek','Others','Politics','Read full','Sign up','Search','Society','Sport');
+INSERT INTO `control` (`locale_culture`,`actual_news`,`authorization`,`culture`,`economics`,`look_for`,`others`,`politics`,`read_full`,`registration`,`search`,`society`,`sport`) VALUES ('ru','Актуальные новости','Войти','Культура','Экономика','Искать','Прочее','Политика','Читать полностью','Регистрация','Поиск','Общество','Спорт');

@@ -2,6 +2,7 @@ package com.seavus.practice.newsportal.utility;
 
 import com.seavus.practice.newsportal.models.*;
 import com.seavus.practice.newsportal.repositories.*;
+import com.seavus.practice.newsportal.repositories.localization.LocaleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -25,18 +26,22 @@ public class DatabaseLoader implements CommandLineRunner {
     private final CommentRepository commentRepository;
     @Autowired
     private final TagRepository tagRepository;
+    @Autowired
+    private final LocaleRepository localeRepository;
 
     @Autowired
     public DatabaseLoader(UserRepository userRepository,
                           UserProfileRepository userProfileRepository,
                           ArticleRepository articleRepository,
                           CommentRepository commentRepository,
-                          TagRepository tagRepository) {
+                          TagRepository tagRepository,
+                          LocaleRepository localeRepository) {
         this.userRepository = userRepository;
         this.userProfileRepository = userProfileRepository;
         this.articleRepository = articleRepository;
         this.commentRepository = commentRepository;
         this.tagRepository = tagRepository;
+        this.localeRepository = localeRepository;
     }
 
     @Override

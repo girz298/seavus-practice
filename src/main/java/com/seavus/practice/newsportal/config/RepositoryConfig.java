@@ -2,6 +2,7 @@ package com.seavus.practice.newsportal.config;
 
 import com.seavus.practice.newsportal.models.Article;
 import com.seavus.practice.newsportal.models.Tag;
+import com.seavus.practice.newsportal.models.localization.Locale;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
@@ -16,6 +17,7 @@ public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config){
         config.exposeIdsFor(Tag.class);
         config.exposeIdsFor(Article.class);
+        config.exposeIdsFor(Locale.class);
     }
 
 }
