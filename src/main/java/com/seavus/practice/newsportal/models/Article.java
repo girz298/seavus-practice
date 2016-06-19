@@ -22,6 +22,7 @@ public class Article {
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
     private String header;
+    @Lob
     private String text;
     private LocalDateTime lastEditedOn;
 
@@ -37,7 +38,10 @@ public class Article {
     @OneToMany(mappedBy = "relatedToArticle", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Comment> commentaries = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "leftOnArticle", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Likes> likes = new ArrayList<>();
+
+    @OneToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Tag> articleTags = new ArrayList<>();
 
     public Article(String header, String text, UserProfile author, LocalDateTime lastEditedOn) {
