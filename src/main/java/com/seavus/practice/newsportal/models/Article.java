@@ -39,7 +39,7 @@ public class Article {
     private List<Comment> commentaries = new ArrayList<>();
 
     @OneToMany(mappedBy = "leftOnArticle", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Likes> likes = new ArrayList<>();
+    private List<Like> likes = new ArrayList<>();
 
     @OneToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Tag> articleTags = new ArrayList<>();

@@ -60,6 +60,16 @@ public class DatabaseLoader implements CommandLineRunner {
         articles.add(article);
         articles.add(article1);
         articles.add(article2);
+        List<Like> articleLikes = new ArrayList<>();
+        Like like1 = new Like(1);
+        like1.setLeftByUser(userProfile);
+        like1.setLeftOnArticle(article);
+        articleLikes.add(like1);
+        Like like2 = new Like(-1);
+        like2.setLeftByUser(userProfile);
+        like2.setLeftOnArticle(article);
+        articleLikes.add(like2);
+        article.setLikes(articleLikes);
         List<Tag> articleTags = new ArrayList<>();
         Tag wow = new Tag("wow");
         wow.setBelongsToArticles(articles);

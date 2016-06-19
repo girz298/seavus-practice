@@ -11,8 +11,9 @@ import javax.persistence.*;
  */
 @Data
 @Entity
+@Table(name = "_Like")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Likes {
+public class Like {
 
     @Id
     @GeneratedValue(generator="system-uuid")
@@ -38,9 +39,9 @@ public class Likes {
     @JoinColumn(name = "user_id")
     private UserProfile leftByUser;
 
-    Likes(){};
+    public Like(){};
 
-    Likes(int mark){
+    public Like(int mark){
         this.mark = mark;
     }
 }

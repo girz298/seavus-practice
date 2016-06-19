@@ -35,7 +35,7 @@ public class UserProfile {
     private List<Comment> leftComments = new ArrayList<>();
 
     @OneToMany(mappedBy = "leftByUser", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Likes> likes = new ArrayList<>();
+    private List<Like> likes = new ArrayList<>();
 
     public UserProfile(String name, String surname, String profileImageURL, User user) {
         this.name = name;
