@@ -13,8 +13,7 @@
  <!--  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/MainPageNewsCtrl/MainPageNewsCtrl.js"></script>
+
 
     
 
@@ -26,6 +25,69 @@
     <![endif]-->
   </head>
   <body>
+      <div id="enterModal" class="modal fade">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <!-- Заголовок модального окна -->
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">Вход</h4>
+                  </div>
+                  <!-- Основное содержимое модального окна -->
+                  <div class="modal-body">
+                      <form class="navbar-form">
+                          </br></br>
+                          <div class="form-group">
+                              <input name="login" type="text" class="form" placeholder="Логин">
+                          </div></br></br>
+                          <div class="form-group">
+                              <input name="password" type="password" class="form" placeholder="Пароль">
+                          </div>
+                      </form>
+                  </div>
+                  <!-- Футер модального окна -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Войти</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      
+        <div id="regModal" class="modal fade">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <!-- Заголовок модального окна -->
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">Регистрация</h4>
+                  </div>
+                  <!-- Основное содержимое модального окна -->
+                  <div class="modal-body">
+                      <form class="navbar-form">
+                          </br></br>
+                          <div class="form-group">
+                              <input name="e-mail" type="text" class="form" placeholder="email">
+                          </div></br></br>
+                          <div class="form-group">
+                              <input name="login" type="text" class="form" placeholder="Логин">
+                          </div></br></br>
+                          <div class="form-group">
+                              <input name="password" type="password" class="form" placeholder="Пароль">
+                          </div></br></br>
+                          <div class="form-group">
+                              <input name="repeatPassword" type="password" class="form" placeholder="Повторите пароль">
+                          </div>
+                      </form>
+                  </div>
+                  <!-- Футер модального окна -->
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Зарегистрироваться</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
       <!--<header class ="navbar-fixed-top">-->
     <!--  <header class ="navbar-fixed-top">-->
     <header data-spy="affix" data-offset-top="120">
@@ -40,8 +102,8 @@
             <img src="images/Twitter.png">
         </a>
         <span class="text-block">
-        <a href ="#" class = "navbar-link">Авторизация</a>
-        <a href ="#" class = "navbar-link">|Регистрация</a>
+        <a href ="#enterModal" data-toggle="modal" class = "navbar-link">Авторизация</a>
+        <a href ="#regModal" data-toggle="modal"  class = "navbar-link">|Регистрация</a>
         </span>
         <span class="text-block">
         <a href ="#" class = "navbar-link">Py|</a>
@@ -89,15 +151,7 @@
            <h1 align="right">Фото дня</h1>
       </div>
     </div>
-    <div class="container-fluid" ng-controller="MainPageNewsCtrl">
-        <div class="news-block" ng-repeat="mainNews in news">
-                <img src="images/foto.jpg" width="250" height="200">
-                <h2>{{mainNews.header}}</h2>
-                <h5>{{mainNews.text}}</h5>
-                <a href="#"><h3>Читать полностью</h3></a>
-            </div>
-    </div>
-        <div class="container actual-news">
+		<div class="container actual-news">
             <h4>Актуальные новости</h4>
             <div class="list-group">
                 <a href="#" class="list-group-item">
@@ -122,7 +176,15 @@
                 </a>
             </div>  
         </div>
+    <div class="container-fluid" ng-controller="MainPageNewsCtrl">
+        <div class="news-block" ng-repeat="mainNews in news">
+                <img src="images/foto.jpg" width="250" height="200">
+                <h2>{{mainNews.header}}</h2>
+                <h5>{{mainNews.text}}</h5>
+                <a href="#"><h3>Читать полностью</h3></a>
+            </div>
     </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -132,5 +194,7 @@
             Made by
         </div>
     </footer>
+    <script src="js/app.js"></script>
+    <script src="js/MainPageNewsCtrl/MainPageNewsCtrl.js"></script>
   </body>
 </html>
