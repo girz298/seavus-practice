@@ -1,5 +1,6 @@
 package com.seavus.practice.newsportal.config;
 
+import com.seavus.practice.newsportal.models.Article;
 import com.seavus.practice.newsportal.models.Tag;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
@@ -14,6 +15,7 @@ public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config){
         config.exposeIdsFor(Tag.class);
+        config.exposeIdsFor(Article.class);
     }
 
 }
