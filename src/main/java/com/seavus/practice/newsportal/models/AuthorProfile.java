@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class UserProfile {
+public class AuthorProfile {
 
     @Id
     @GeneratedValue(generator="system-uuid")
@@ -25,8 +25,7 @@ public class UserProfile {
     private String profileImageURL;
 
     @OneToOne
-    @PrimaryKeyJoinColumn
-    private User user;
+    private Author author;
 
     @OneToMany(mappedBy = "author", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Article> articles = new ArrayList<>();
@@ -34,16 +33,16 @@ public class UserProfile {
     @OneToMany(mappedBy = "commentator", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Comment> leftComments = new ArrayList<>();
 
-    @OneToMany(mappedBy = "leftByUser", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "leftByAuthor", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Like> likes = new ArrayList<>();
 
-    public UserProfile(String name, String surname, String profileImageURL, User user) {
+    public AuthorProfile(String name, String surname, String profileImageURL, Author author) {
         this.name = name;
         this.surname = surname;
         this.profileImageURL = profileImageURL;
-        this.user = user;
+        this.author = author;
     }
 
-    public UserProfile() {
+    public AuthorProfile() {
     }
 }

@@ -37,7 +37,7 @@ public class Like {
                     CascadeType.REFRESH
             })
     @JoinColumn(name = "user_id")
-    private UserProfile leftByUser;
+    private AuthorProfile leftByAuthor;
 
     public Like(){};
 

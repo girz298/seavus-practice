@@ -17,9 +17,9 @@ import java.util.List;
 @Component
 public class DatabaseLoader implements CommandLineRunner {
     @Autowired
-    private final UserRepository userRepository;
+    private final AuthorRepository authorRepository;
     @Autowired
-    private final UserProfileRepository userProfileRepository;
+    private final AuthorProfileRepository authorProfileRepository;
     @Autowired
     private final ArticleRepository articleRepository;
     @Autowired
@@ -30,14 +30,14 @@ public class DatabaseLoader implements CommandLineRunner {
     private final LocaleRepository localeRepository;
 
     @Autowired
-    public DatabaseLoader(UserRepository userRepository,
-                          UserProfileRepository userProfileRepository,
+    public DatabaseLoader(AuthorRepository authorRepository,
+                          AuthorProfileRepository authorProfileRepository,
                           ArticleRepository articleRepository,
                           CommentRepository commentRepository,
                           TagRepository tagRepository,
                           LocaleRepository localeRepository) {
-        this.userRepository = userRepository;
-        this.userProfileRepository = userProfileRepository;
+        this.authorRepository = authorRepository;
+        this.authorProfileRepository = authorProfileRepository;
         this.articleRepository = articleRepository;
         this.commentRepository = commentRepository;
         this.tagRepository = tagRepository;
@@ -46,20 +46,21 @@ public class DatabaseLoader implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        UserProfile userProfile = new UserProfile("testName", "testLogin", "image", null);
-        User user = new User("user", "password", null, userProfile);
-        userRepository.save(user);
-        userProfileRepository.save(userProfile);
+        AuthorProfile authorProfile = new AuthorProfile("testName", "testLogin", "image", null);
+        Author author = new Author("author", "password", "GENERAL_USER");
+        authorProfile.setAuthor(author);
+        authorRepository.save(author);
+        authorProfileRepository.save(authorProfile);
         Article article = new Article("EU referendum: Osborne warns of Brexit budget cuts", "George "+
                 " Osborne says he will have to slash public spending and increase "+
                 " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
-                " European Union.", userProfile, LocalDateTime.now());
-        Article article1 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", userProfile, LocalDateTime.now());
+                " European Union.", authorProfile, LocalDateTime.now());
+        Article article1 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
         Article article2 = new Article("US charges Chinese ex-IBM worker with espionage", "The Department of Justice did not name the employer, but it is widely reported to be software developer IBM.\n" +
-                "Mr Xu intended to sell the code for his own profit and for the benefit of the Chinese government, authorities said.", userProfile, LocalDateTime.now());
+                "Mr Xu intended to sell the code for his own profit and for the benefit of the Chinese government, authorities said.", authorProfile, LocalDateTime.now());
         List<Comment> articleComments = new ArrayList<>();
-        articleComments.add(new Comment("amazing text1", LocalDateTime.now(), userProfile, article));
-        articleComments.add(new Comment("amazing text2", LocalDateTime.now(), userProfile, article));
+        articleComments.add(new Comment("amazing text1", LocalDateTime.now(), authorProfile, article));
+        articleComments.add(new Comment("amazing text2", LocalDateTime.now(), authorProfile, article));
         article.setCommentaries(articleComments);
         List<Article> articles = new ArrayList<>();
         articles.add(article);
@@ -67,11 +68,11 @@ public class DatabaseLoader implements CommandLineRunner {
         articles.add(article2);
         List<Like> articleLikes = new ArrayList<>();
         Like like1 = new Like(1);
-        like1.setLeftByUser(userProfile);
+        like1.setLeftByAuthor(authorProfile);
         like1.setLeftOnArticle(article);
         articleLikes.add(like1);
         Like like2 = new Like(-1);
-        like2.setLeftByUser(userProfile);
+        like2.setLeftByAuthor(authorProfile);
         like2.setLeftOnArticle(article);
         articleLikes.add(like2);
         article.setLikes(articleLikes);

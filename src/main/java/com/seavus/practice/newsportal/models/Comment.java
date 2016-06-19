@@ -30,7 +30,7 @@ public class Comment {
                     CascadeType.REFRESH
             })
     @JoinColumn(name = "user_id")
-    private UserProfile commentator;
+    private AuthorProfile commentator;
 
     @ManyToOne(fetch=FetchType.LAZY, optional = false, cascade =
             {
@@ -41,7 +41,7 @@ public class Comment {
     @JoinColumn(name = "article_id")
     private Article relatedToArticle;
 
-    public Comment(String text, LocalDateTime leftOn, UserProfile commentator, Article relatedToArticle) {
+    public Comment(String text, LocalDateTime leftOn, AuthorProfile commentator, Article relatedToArticle) {
         this.text = text;
         this.leftOn = leftOn;
         this.commentator = commentator;

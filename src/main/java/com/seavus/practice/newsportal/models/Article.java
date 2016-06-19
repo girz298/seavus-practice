@@ -33,7 +33,7 @@ public class Article {
                     CascadeType.REFRESH
             })
     @JoinColumn(name = "user_id")
-    private UserProfile author;
+    private AuthorProfile author;
 
     @OneToMany(mappedBy = "relatedToArticle", fetch=FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Comment> commentaries = new ArrayList<>();
@@ -44,7 +44,7 @@ public class Article {
     @ManyToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Tag> articleTags = new ArrayList<>();
 
-    public Article(String header, String text, UserProfile author, LocalDateTime lastEditedOn) {
+    public Article(String header, String text, AuthorProfile author, LocalDateTime lastEditedOn) {
         this.header = header;
         this.text = text;
         this.author = author;

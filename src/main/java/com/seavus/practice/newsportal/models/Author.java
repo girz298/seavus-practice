@@ -3,6 +3,7 @@ package com.seavus.practice.newsportal.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.ToString;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -14,33 +15,32 @@ import javax.persistence.*;
 @Data
 @ToString(exclude = "password")
 @Entity
-public class User {
+public class Author {
 
     public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
 
     @Id
+    @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
+    private String id;
+
     private String login;
+
     @JsonIgnore
     private String password;
 
     private String[] roles;
 
-    @MapsId
-    @OneToOne
-    @JoinColumn(name="login")
-    private UserProfile userProfile;
-
     public void setPassword(String password) {
         this.password = PASSWORD_ENCODER.encode(password);
     }
 
-    public User(String login, String password, String[] roles, UserProfile userProfile) {
+    public Author(String login, String password, String...roles) {
         this.login = login;
-        this.userProfile = userProfile;
         this.setPassword(password);
         this.roles = roles;
     }
 
-    public User() {
+    public Author() {
     }
 }
