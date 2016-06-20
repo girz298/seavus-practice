@@ -1,14 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "RobotoBold";
+}
 
 header
 {
-    margin: 0 0 40px;
-    height: 60px;
-    border-bottom:0px solid black;
     background: #eff0f4;
 }
 body
 {
-   background: #d7dce2; 
+   background-color: white; 
 }
 .page-header
 {
@@ -20,37 +22,17 @@ body
 .page-header> a > img
 {    margin: 15px 0 10px ;
     height :26px;
-    width :27px;
-    
+    width :27px;    
 }
-.navbar-link
-{
-    margin: inherit;
-    font-family: 'Arial';
-    font-size: 381px 32px;
-    color: black;
-}
-.navbar-link:hover{
-    color:black;
-}
+
 .text-block
 {
     padding: 15px 30px 0 80px;
     margin: -30px 0 30px;
 }
-.form-group .form-control
-{
-    width: 700px;
-}
-.navbar-form
-{
-    margin: -40px 0 10px;
-}
-.navbar-brand>img
-{
-    height:82px;
-    width:90px;
-}
+
+
+
 .navbar-fixed-bottom
 {
         background: #eff0f4;
@@ -72,15 +54,14 @@ body
 h1.navbar-text
 {
     font-family:'Goudy Stout';
-    font-size: 30pt;
+    font-size: 100%;
     font-style: oblique;
+    padding: 0;
+    margin: 0;
+    line-height: 100%;
     font-weight: bold;
-    margin:30px 0;
 }
-.navbar
-{
-    height:100px;
-}
+
 .btn-group-justified
 {
     width: 700px;
@@ -88,12 +69,7 @@ h1.navbar-text
     top: 30px;
     
 }
-.btn-default
-{
-    font-family:'Arial';
-    font-size:13pt;
-    background: #eff0f4;
-}
+
 
 .jumbotron>h1
 {
@@ -106,12 +82,10 @@ h1.navbar-text
 }
 .news-block
 {
-    width: 950px;
+    width: 100%;
     height: 300px;
     border: 0.5px solid black;
     margin-top: 50px;
-    margin-left: 20px;
- 
 }
 .news-block >img
 {
@@ -152,15 +126,13 @@ h1.navbar-text
 }
 .actual-news
 {
-    width: 300px;
-    height:  200px;
-    position:absolute;
-    margin-top:200px;
-    margin-left: 1000px;
+    padding-top: 2%;
+    width: 100%;
+    height:  100%;
 }
 .actual-news>h4
 {
-    font-family: 'Century Schoolbook';
+    font-family: 'RobotoMedium';
     font-size: 18pt;
     font-style: oblique;
     font-weight: bold;
@@ -181,17 +153,7 @@ h1.navbar-text
 {
     border:0px;
 }
-.form
-{
-    width: 450px;
-    height: 30px;
-    margin-left: 40px;
-    border:1px solid graytext;
-    background: #ebeff1; 
-    box-shadow: 0 0 10px graytext;
-    border-radius: 3px;
-    
-}
+
 .modal-content
 {
     background: #eff0f4;
@@ -201,4 +163,24 @@ h1.navbar-text
 {
     width: 250px;
     margin-right: 150px;
+}
+.add-float{
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.my-header{
+    margin: 0;
+    padding: 0;
+    padding: 4px;
+}
+.affix {
+    top:0;
+    z-index: 9999 !important;
+}
+
+.navbar{
+    border-radius: 0px;
+    border-bottom: solid 2px black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
