@@ -7,34 +7,11 @@
         <div class="col-lg-4">
                 <div class="container actual-news">
                     <h4>Актуальные новости</h4>
-                    <div class="list-group">
-                        <a href="#/" class="list-group-item">
-                            <h4 class="list-group-item-heading">Сегодня самый лучший день</h4>
-                            <p class="list-group-item-text">14.06.2016</p>
-                        </a>
-                        <a href="#/" class="list-group-item">
-                            <h4 class="list-group-item-heading">ДТП на Лениском проспекте</h4>
-                            <p class="list-group-item-text">14.06.2016</p>
-                        </a>
-                        <a href="#/" class="list-group-item">
-                            <h4 class="list-group-item-heading">Праздник состоялся</h4>
-                            <p class="list-group-item-text">14.05.2016</p>
-                        </a>
-                        <a href="#/" class="list-group-item">
-                            <h4 class="list-group-item-heading">В парке Победы стартовал велопарад</h4>
-                            <p class="list-group-item-text">01.05.2016</p>
-                        </a>
-                        <a href="#/" class="list-group-item">
-                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
-                            <p class="list-group-item-text">01.04.2016</p>
-                        </a>
-                        <a href="#/" class="list-group-item">
-                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
-                            <p class="list-group-item-text">01.04.2016</p>
-                        </a>
-                        <a href="#/" class="list-group-item">
-                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
-                            <p class="list-group-item-text">01.04.2016</p>
+                    <div class="list-group" >
+                        
+                        <a href="#/articles/{{mainNews.id}}" class="list-group-item"  ng-repeat="mainNews in actualNews">
+                            <h4 class="list-group-item-heading">{{mainNews.header.slice(0,42)+"..."}}</h4>
+                            <p class="list-group-item-text">{{mainNews.lastEditedOn.dayOfMonth}}.{{mainNews.lastEditedOn.monthValue}}.{{mainNews.lastEditedOn.year}}</p>
                         </a>
                     </div>  
                 </div>             

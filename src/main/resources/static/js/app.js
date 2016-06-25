@@ -14,9 +14,15 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		templateUrl: 'templates/main.html',
 		controller: function($scope,$http){
 			$scope.news = [];
+			$scope.actualNews = [];
 			$http.get("http://localhost:8080/api/articles").success(function (data, status, headers, config) {
 			    $scope.news = data._embedded.articles;
+			    $scope.actualNews = $scope.news.slice(0,6);
 		    });
+
+		    $scope.sliceFilter = function( string ){
+		    	
+		    }
 		}
 	})
 	.state('anycategory',{
@@ -35,16 +41,9 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 	})
 	.state('addnews',{
 		url: '/addnews',
-		templateUrl: 'templates/main.html',
+		templateUrl: 'templates/add-news.html',
 		controller: function($scope,$http,$stateParams){
-			$scope.news = [];
-			$scope.getingStatus = false;
-			$http.get("http://localhost:8080/api/tags/"+$stateParams.categoryId+"/belongsToArticles").success(function (data, status, headers, config) {
-			    $scope.news = data._embedded.articles;
-			    $scope.getingStatus = true;
-		    }).error(function () {
-	 	    	$scope.getingStatus = false;
-		    });
+
 		}
 	})
 	.state('full-article',{
@@ -53,6 +52,10 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		controller: function($scope,$http,$stateParams){
 			$scope.article = {};
 			$scope.getingStatus = false;
+			$http.get("http://localhost:8080/api/articles").success(function (data, status, headers, config) {
+				$scope.news = data._embedded.articles;
+				$scope.actualNews = $scope.news.slice(0,6);
+			});
 			$http.get("http://localhost:8080/api/articles/"+$stateParams.articleId).success(function (data, status, headers, config) {
 			    $scope.article = data;
 			    $scope.getingStatus = true;

@@ -59,6 +59,12 @@ public class DatabaseLoader implements CommandLineRunner {
         Article article2 = new Article("US charges Chinese ex-IBM worker with espionage", "The Department of Justice did not name the employer, but it is widely reported to be software developer IBM.\n" +
                 "Mr Xu intended to sell the code for his own profit and for the benefit of the Chinese government, authorities said.", authorProfile, LocalDateTime.now());
         List<Comment> articleComments = new ArrayList<>();
+        Article article3 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
+        Article article4 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
+        Article article5 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
+        Article article6 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
+        Article article7 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
+
         articleComments.add(new Comment("amazing text1", LocalDateTime.now(), authorProfile, article));
         articleComments.add(new Comment("amazing text2", LocalDateTime.now(), authorProfile, article));
         article.setCommentaries(articleComments);
@@ -66,6 +72,11 @@ public class DatabaseLoader implements CommandLineRunner {
         articles.add(article);
         articles.add(article1);
         articles.add(article2);
+        articles.add(article3);
+        articles.add(article4);
+        articles.add(article5);
+        articles.add(article6);
+        articles.add(article7);
         List<Like> articleLikes = new ArrayList<>();
         Like like1 = new Like(1);
         like1.setLeftByAuthor(authorProfile);
