@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru" ng-app="newsApp">
   <head>
+    <!--  need to fix # in URL's -->
+    <!--  <base href="/"></base>    -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,75 +113,23 @@
         <div class="news-nav-bar">
                 <nav class="navbar navbar-inverse"  data-spy="affix" data-offset-top="100" >
                     <ul class="nav navbar-nav add-float">
-                      <li class="active"><a href="#">На главную</a></li>
-                      <li><a href="#">Спорт</a></li>
-                      <li><a href="#">Культура</a></li> 
-                      <li><a href="#">Общество</a></li> 
-                      <li><a href="#">Политика</a></li> 
-                      <li><a href="#">Экономика</a></li> 
-                      <li><a href="#">Прочее</a></li> 
+                      <li class="active"><a href="#/">На главную</a></li>
+                      <li> <a href="#/category/sport">Спорт</a></li>
+                      <li><a href="#/category/culture">Культура</a></li> 
+                      <li><a href="#/category/society">Общество</a></li> 
+                      <li><a href="#/category/policy">Политика</a></li> 
+                      <li><a href="#/category/economy">Экономика</a></li> 
+                      <li><a href="#/category/other">Прочее</a></li> 
                     </ul>
                 </nav>
         </div>
       </header>
-
-    <div class="container-fluid">
-        <div class="col-lg-8">
-            <div class="jumbotron" style="height:500px;background: url(images/foto.jpg);background-size: 1920px 500px">
-                <h1 align="right">Фото дня</h1>
-            </div>
-        </div>
-        <div class="col-lg-4">
-                <div class="container actual-news">
-                    <h4>Актуальные новости</h4>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">Сегодня самый лучший день</h4>
-                            <p class="list-group-item-text">14.06.2016</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">ДТП на Лениском проспекте</h4>
-                            <p class="list-group-item-text">14.06.2016</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">Праздник состоялся</h4>
-                            <p class="list-group-item-text">14.05.2016</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">В парке Победы стартовал велопарад</h4>
-                            <p class="list-group-item-text">01.05.2016</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
-                            <p class="list-group-item-text">01.04.2016</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
-                            <p class="list-group-item-text">01.04.2016</p>
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
-                            <p class="list-group-item-text">01.04.2016</p>
-                        </a>
-
-                    </div>  
-                </div>             
-        </div>
-    </div>
-    <div class="container-fluid" ng-controller="MainPageNewsCtrl">
-        <div class="news-block" ng-repeat="mainNews in news">
-                <img src="images/foto.jpg" width="250" height="200">
-                <h2>{{mainNews.header}}</h2>
-                <h5>{{mainNews.text}}</h5>
-                <a href="#"><h3>Читать полностью</h3></a>
-            </div>
-    </div>
-
+    <main ui-view>
+      
+    </main>
 
     <footer>
-<!--         <div class="navbar-fixed-bottom">
-            Made by
-        </div> -->
+
     </footer>
     <script src="js/app.js"></script>
     <script src="js/MainPageNewsCtrl/MainPageNewsCtrl.js"></script>

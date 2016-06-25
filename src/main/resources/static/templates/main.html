@@ -1,0 +1,53 @@
+    <div class="container-fluid">
+        <div class="col-lg-8">
+            <div class="jumbotron" style="height:500px;background: url(images/foto.jpg);background-size: 1920px 500px">
+                <h1 align="right">Фото дня</h1>
+            </div>
+        </div>
+        <div class="col-lg-4">
+                <div class="container actual-news">
+                    <h4>Актуальные новости</h4>
+                    <div class="list-group">
+                        <a href="#/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Сегодня самый лучший день</h4>
+                            <p class="list-group-item-text">14.06.2016</p>
+                        </a>
+                        <a href="#/" class="list-group-item">
+                            <h4 class="list-group-item-heading">ДТП на Лениском проспекте</h4>
+                            <p class="list-group-item-text">14.06.2016</p>
+                        </a>
+                        <a href="#/" class="list-group-item">
+                            <h4 class="list-group-item-heading">Праздник состоялся</h4>
+                            <p class="list-group-item-text">14.05.2016</p>
+                        </a>
+                        <a href="#/" class="list-group-item">
+                            <h4 class="list-group-item-heading">В парке Победы стартовал велопарад</h4>
+                            <p class="list-group-item-text">01.05.2016</p>
+                        </a>
+                        <a href="#/" class="list-group-item">
+                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
+                            <p class="list-group-item-text">01.04.2016</p>
+                        </a>
+                        <a href="#/" class="list-group-item">
+                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
+                            <p class="list-group-item-text">01.04.2016</p>
+                        </a>
+                        <a href="#/" class="list-group-item">
+                            <h4 class="list-group-item-heading">График отключения горячей воды в Минске</h4>
+                            <p class="list-group-item-text">01.04.2016</p>
+                        </a>
+
+                    </div>  
+                </div>             
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="news-block"  ng-repeat="mainNews in news">
+                <img src="images/foto.jpg" width="250" height="200">
+                <h2>{{mainNews.header}}</h2>
+                <h5>{{mainNews.text}}</h5>
+                <p>{{mainNews.lastEditedOn | date:'dd.MM.yyyy'}}</p>
+                <a href="#"><h3>Читать полностью</h3></a>
+        </div>
+        <!-- <h1 ng-if="!$scope.getingStatus">Ошибка данные отсутвуют!</h1> -->
+    </div>
