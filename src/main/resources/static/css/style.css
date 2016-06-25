@@ -200,3 +200,45 @@ h1.navbar-text
     margin: 0;
     float: right;
 }
+
+.left-side{
+    /*background-color: red;*/
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.left-side >textarea {
+    padding-left: 2px;
+    width: 100%;
+}
+
+.right-side{
+    padding-right: 2px;
+    /*background-color: green;*/
+    padding: 0;
+    margin: 0;
+    float: right;
+    width: 50%;
+    height: 100%;
+    border-left: solid 2px black;
+}
+.right-side img {
+    width: 100%;
+    height: 100%;
+}
+
+.full-news{
+    border: solid 2px black;
+    padding: 0;
+    margin: 0;
+    padding: 2px;
+    border-radius: 12px;
+}
+
+.full-news img{
+    width: 100%;
+    height: 100%;
+}

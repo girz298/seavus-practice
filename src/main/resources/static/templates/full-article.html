@@ -1,27 +1,6 @@
-    <div class="container-fluid">
-        <div class="col-lg-8">
-            <div class="jumbotron" style="height:500px;background: url(images/foto.jpg);background-size: 1920px 500px">
-                <h1 align="right">Фото дня</h1>
-            </div>
-        </div>
-        <div class="col-lg-4">
-                <div class="container actual-news">
-                    <h4>Актуальные новости</h4>
-                    <div class="list-group">
-                        <a href="#/articles/{{mainNews.id}}" class="list-group-item"  ng-repeat="mainNews in actualNews">
-                            <h4 class="list-group-item-heading">{{mainNews.header.slice(0,42)+"..."}}</h4>
-                            <p class="list-group-item-text">{{mainNews.lastEditedOn.dayOfMonth}}.{{mainNews.lastEditedOn.monthValue}}.{{mainNews.lastEditedOn.year}}</p>
-                        </a>
-                    </div>  
-                </div>             
-        </div>
+<div class="container">
+    <div class="full-news" >
+            <h2>{{article.header}}</h2>
+            <h5 ><div ng-bind-html="deliberatelyTrustDangerousSnippet()"></div></h5>
     </div>
-    <div class="container-fluid">
-        <div class="news-block" >
-                <img src="images/foto.jpg" width="250" height="200">
-                <h2>{{article.header}}</h2>
-                <h5>{{article.text}}</h5>
-                <p>{{article.lastEditedOn | date:'dd.MM.yyyy'}}</p>
-        </div>
-        <!-- <h1 ng-if="!$scope.getingStatus">Ошибка данные отсутвуют!</h1> -->
-    </div>
+</div>

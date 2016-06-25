@@ -1,1 +1,7 @@
-<h1>Окно добавления новостей<h1>
+<div class="left-side">
+	<textarea class="form-control" rows="18" ng-model="mdDirective"></textarea>
+	<button type="button" href="#/" ng-click="sendBtnListener()" class="btn btn-primary">Отправить</button>
+</div>
+<div class="right-side">
+	<wiz-markdown content="mdDirective"></wiz-markdown>
+</div>
