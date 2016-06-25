@@ -85,7 +85,7 @@ h1.navbar-text
     width: 100%;
     height: 300px;
     border: 0.5px solid black;
-    margin-top: 50px;
+    margin-top: -1px;
 }
 .news-block >img
 {
@@ -183,4 +183,20 @@ h1.navbar-text
     border-bottom: solid 2px black;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+.auth-reg-block,.search-block,.add-button{
+    padding-left: 0px;
+    padding-right: 3px;
+}
+
+.add-btn{
+    width: 2.5%;
+    margin-right: 5px;
+    padding: 5.1px;
+}
+.search-block{
+    padding: 0;
+    margin: 0;
+    float: right;
 }

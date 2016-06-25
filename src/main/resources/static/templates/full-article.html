@@ -41,12 +41,11 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="news-block"  ng-repeat="mainNews in news">
+        <div class="news-block" >
                 <img src="images/foto.jpg" width="250" height="200">
-                <h2>{{mainNews.header}}</h2>
-                <h5>{{mainNews.text}}</h5>
-                <p>{{mainNews.lastEditedOn | date:'dd.MM.yyyy'}}</p>
-                <a href="#/articles/{{mainNews.id}}"><h3>Читать полностью</h3></a>
+                <h2>{{article.header}}</h2>
+                <h5>{{article.text}}</h5>
+                <p>{{article.lastEditedOn | date:'dd.MM.yyyy'}}</p>
         </div>
         <!-- <h1 ng-if="!$scope.getingStatus">Ошибка данные отсутвуют!</h1> -->
     </div>
