@@ -11,7 +11,7 @@
 
                         <a href="#/articles/{{mainNews.id}}" class="list-group-item"  ng-repeat="mainNews in actualNews" >
                             <h4 class="list-group-item-heading">{{mainNews.header.slice(0,42)+"..."}}</h4>
-                            <p class="list-group-item-text">{{mainNews.lastEditedOn.dayOfMonth}}.{{mainNews.lastEditedOn.monthValue}}.{{mainNews.lastEditedOn.year}}</p>
+                            <p class="list-group-item-text">{{mainNews.lastEditedOn+"000" | date:'dd.MM.yyyy'}}</p>
                         </a>
                     </div>  
                 </div>             
@@ -22,7 +22,7 @@
                 <img src="images/foto.jpg" width="250" height="200">
                 <h2>{{mainNews.header}}</h2>
                 <h5>{{mainNews.text}}</h5>
-                <p>{{mainNews.lastEditedOn | date:'dd.MM.yyyy'}}</p>
+                <p>{{mainNews.lastEditedOn+"000" | date:'dd.MM.yyyy'}}</p>
                 <a href="#/articles/{{mainNews.id}}"><h3>Читать полностью</h3></a>
         </div>
         <!-- <h1 ng-if="!$scope.getingStatus">Ошибка данные отсутвуют!</h1> -->

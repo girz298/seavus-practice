@@ -19,6 +19,11 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 			    $scope.news = data._embedded.articles.reverse();
 			    $scope.actualNews = $scope.news.slice(0,6);
 		    });
+
+			$scope.toNormalDate = function(long){
+				return long+"";
+			}
+
 		}
 	})
 	.state('anycategory',{
@@ -33,6 +38,8 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		    }).error(function () {
 	 	    	$scope.getingStatus = false;
 		    });
+
+
 		}
 	})
 	.state('addnews',{
@@ -42,7 +49,7 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 			$scope.sendBtnListener = function(){
 				console.log($scope.mdDirective);
 				console.log(wizMarkdownSvc.Transform($scope.mdDirective));
-				$http.post('/api/articles', {'header':$scope.mdDirective.slice(1,45),'text':wizMarkdownSvc.Transform($scope.mdDirective)});
+				$http.post('/api/articles', {'header':$scope.mdDirective.slice(1,45),'text':wizMarkdownSvc.Transform($scope.mdDirective),'lastEditedOn': new Date().getTime()/1000});
 			}
 		}
 	})
