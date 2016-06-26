@@ -1,12 +1,12 @@
     <div class="container-fluid">
         <div class="col-lg-8">
             <div class="jumbotron" style="height:500px;background: url(images/foto.jpg);background-size: 1920px 500px">
-                <h1 align="right">Фото дня</h1>
+                <h1 align="right">{{ 'PHOTO_OF_THE_DAY' | translate }}</h1>
             </div>
         </div>
         <div class="col-lg-4">
                 <div class="container actual-news">
-                    <h4>Актуальные новости</h4>
+                    <h4>{{ 'ACTUAL_NEWS' | translate }}</h4>
                     <div class="list-group" >
 
                         <a href="#/articles/{{mainNews.id}}" class="list-group-item"  ng-repeat="mainNews in actualNews" >
@@ -23,7 +23,8 @@
                 <h2>{{mainNews.header}}</h2>
                 <h5>{{mainNews.text}}</h5>
                 <p>{{mainNews.lastEditedOn+"000" | date:'dd.MM.yyyy'}}</p>
-                <a href="#/articles/{{mainNews.id}}"><h3>Читать полностью</h3></a>
+                <a href="#/articles/{{mainNews.id}}"><h3>{{ 'READ_FULL' | translate }}</h3></a>
         </div>
         <!-- <h1 ng-if="!$scope.getingStatus">Ошибка данные отсутвуют!</h1> -->
+
     </div>
