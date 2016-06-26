@@ -14,10 +14,12 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/fonts.css" rel="stylesheet">
     <!--  <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
-    <script src="libs/wizMarkdown/angular-sanitize.js"></script>
-    <script src="libs/wizMarkdown/wizMarkdown.min.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+      <script src="libs/wizMarkdown/angular-sanitize.js"></script>
+      <script src="libs/wizMarkdown/wizMarkdown.min.js"></script>
+      <script src="libs/angular-translate.min.js"></script>
 
 
 
@@ -34,30 +36,30 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app="newsApp">
       <div id="enterModal" class="modal fade">
           <div class="modal-dialog">
               <div class="modal-content">
                   <!-- Заголовок модального окна -->
                   <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                      <h4 class="modal-title">Вход</h4>
+                      <h4 class="modal-title">{{ 'SIGN_IN' | translate }}</h4>
                   </div>
                   <!-- Основное содержимое модального окна -->
                   <div class="modal-body">
                       <form class="navbar-form">
                           </br></br>
                           <div class="form-group">
-                              <input name="login" type="text" class="form" placeholder="Логин">
+                              <input name="login" type="text" class="form" placeholder="{{ 'USERNAME' | translate }}">
                           </div></br></br>
                           <div class="form-group">
-                              <input name="password" type="password" class="form" placeholder="Пароль">
+                              <input name="password" type="password" class="form" placeholder="{{ 'PASSWORD' | translate }}">
                           </div>
                       </form>
                   </div>
                   <!-- Футер модального окна -->
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Войти</button>
+                      <button type="button" class="btn btn-primary">{{ 'SIGN_IN' | translate }}</button>
                   </div>
               </div>
           </div>
@@ -70,7 +72,7 @@
                   <!-- Заголовок модального окна -->
                   <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                      <h4 class="modal-title">Регистрация</h4>
+                      <h4 class="modal-title">{{ 'SIGN_UP' | translate }}</h4>
                   </div>
                   <!-- Основное содержимое модального окна -->
                   <div class="modal-body">
@@ -80,19 +82,19 @@
                               <input name="e-mail" type="text" class="form" placeholder="email">
                           </div></br></br>
                           <div class="form-group">
-                              <input name="login" type="text" class="form" placeholder="Логин">
+                              <input name="login" type="text" class="form" placeholder="{{ 'USERNAME' | translate }}">
                           </div></br></br>
                           <div class="form-group">
-                              <input name="password" type="password" class="form" placeholder="Пароль">
+                              <input name="password" type="password" class="form" placeholder="{{ 'PASSWORD' | translate }}">
                           </div></br></br>
                           <div class="form-group">
-                              <input name="repeatPassword" type="password" class="form" placeholder="Повторите пароль">
+                              <input name="repeatPassword" type="password" class="form" placeholder="{{ 'PASSWORD' | translate }}">
                           </div>
                       </form>
                   </div>
                   <!-- Футер модального окна -->
                   <div class="modal-footer">
-                      <button type="button" class="btn btn-primary">Зарегистрироваться</button>
+                      <button type="button" class="btn btn-primary">{{ 'SIGN_UP' | translate }}</button>
                   </div>
               </div>
           </div>
@@ -103,16 +105,20 @@
             <a href ="#/addnews" class = "glyphicon glyphicon-plus btn btn-primary col-lg-1 add-btn" ></a>
 
             <div class="col-lg-4 auth-reg-block">
-                <a href ="#regModal" data-toggle="modal" class = "btn btn-success">Регистрация</a>
-                <a href ="#enterModal" data-toggle="modal"  class = "btn btn-default">Авторизация</a>
- 
-                <a href ="#" class = "navbar-link">Py|</a>
-                <a href ="#" class = "navbar-link">Eng</a>
+                <div class="btn-group">
+                    <a href ="#regModal" data-toggle="modal" class = "btn btn-success">{{ 'SIGN_UP' | translate }}</a>
+                    <a href ="#enterModal" data-toggle="modal"  class = "btn btn-success">{{ 'SIGN_IN' | translate }}</a>
+                </div>
+
+                <div class="btn-group" ng-controller="TranslateController">
+                    <button type="button" class="btn btn-default" ng-click="changeLanguage('ru')">{{ 'LANG_RU' | translate }}</button>
+                    <button type="button" class="btn btn-default" ng-click="changeLanguage('en')">{{ 'LANG_EN' | translate }}</button>
+                </div>
             </div>
 
             <div class="col-lg-2 col-lg-offset-4 search-block" >
                 <form class="form" role="search">
-                    <input type="text" class="form-control" placeholder="Поиск" >
+                    <input type="text" class="form-control" placeholder="{{ 'SEARCH' | translate }}" >
                 </form>
             </div>
 
@@ -120,17 +126,17 @@
 
         </div>
         <div class="news-nav-bar">
-                <nav class="navbar navbar-inverse"  data-spy="affix" data-offset-top="100" >
-                    <ul class="nav navbar-nav add-float">
-                      <li class="active"><a href="#/">На главную</a></li>
-                      <li> <a href="#/category/sport">Спорт</a></li>
-                      <li><a href="#/category/culture">Культура</a></li> 
-                      <li><a href="#/category/society">Общество</a></li> 
-                      <li><a href="#/category/policy">Политика</a></li> 
-                      <li><a href="#/category/economy">Экономика</a></li> 
-                      <li><a href="#/category/other">Прочее</a></li> 
-                    </ul>
-                </nav>
+            <nav class="navbar navbar-inverse"  data-spy="affix" data-offset-top="100" >
+                <ul class="nav navbar-nav add-float">
+                    <li class="active"><a href="#/">{{ 'MAIN' | translate }}</a></li>
+                    <li> <a href="#/category/sport">{{ 'SPORT' | translate }}</a></li>
+                    <li><a href="#/category/culture">{{ 'CULTURE' | translate }}</a></li>
+                    <li><a href="#/category/society">{{ 'SOCIETY' | translate }}</a></li>
+                    <li><a href="#/category/policy">{{ 'POLITICS' | translate }}</a></li>
+                    <li><a href="#/category/economy">{{ 'ECONOMICS' | translate }}</a></li>
+                    <li><a href="#/category/other">{{ 'OTHERS' | translate }}</a></li>
+                </ul>
+            </nav>
         </div>
       </header>
     <main ui-view>

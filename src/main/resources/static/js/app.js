@@ -1,5 +1,5 @@
-var newsApp = angular.module('newsApp', ['ui.router','wiz.markdown','ngSanitize']);
-newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+var newsApp = angular.module('newsApp', ['ui.router','wiz.markdown','ngSanitize', 'pascalprecht.translate']);
+newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider, $translateProvider) {
 
 	// need to fix '#' in URL's 
 	// $locationProvider.html5Mode({
@@ -69,4 +69,49 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 		}
 	});
 
+	$translateProvider.translations('en', {
+		LANG_EN: "English",
+		LANG_RU: "Русский",
+		SIGN_IN: "Sign in",
+		SIGN_UP: "Sign up",
+		SEARCH: "Search",
+		MAIN: "To main",
+		SPORT: "Sport",
+		CULTURE: "Culture",
+		SOCIETY: "Society",
+		POLITICS: "Politics",
+		ECONOMICS: "Economics",
+		OTHERS: "Others",
+		ACTUAL_NEWS: "Actual news",
+		READ_FULL: "Read full",
+		PHOTO_OF_THE_DAY: "Photo of the day",
+		USERNAME: "Username",
+		PASSWORD: "Password"
+	});
+	$translateProvider.translations('ru', {
+		LANG_EN: "English",
+		LANG_RU: "Русский",
+		SIGN_IN: "Войти",
+		SIGN_UP: "Регистрация",
+		SEARCH: "Поиск",
+		MAIN: "На главную",
+		SPORT: "Спорт",
+		CULTURE: "Культура",
+		SOCIETY: "Общество",
+		POLITICS: "Политика",
+		ECONOMICS: "Экономика",
+		OTHERS: "Прочее",
+		ACTUAL_NEWS: "Актуальные новости",
+		READ_FULL: "Читать полностью",
+		PHOTO_OF_THE_DAY : "Фото дня",
+		USERNAME: "Имя пользователя",
+		PASSWORD: "Пароль"
+	});
+	$translateProvider.preferredLanguage('en');
+});
+
+newsApp.controller('TranslateController', function ($translate, $scope) {
+	$scope.changeLanguage = function (lang) {
+		$translate.use(lang);
+	}
 });
