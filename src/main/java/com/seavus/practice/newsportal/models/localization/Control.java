@@ -18,6 +18,7 @@ public class Control {
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
     private String authorization;
+    private String siteName;
     private String registration;
     private String search;
     private String lookFor;
@@ -34,7 +35,7 @@ public class Control {
     @JoinColumn(name="localeCulture")
     private Locale localeCulture;
 
-    public Control(String authorization, String registration, String search, String lookFor, String sport, String culture, String society, String politics, String economics, String others, String actualNews, String readFull, Locale localeCulture) {
+    public Control(String authorization, String registration, String search, String lookFor, String sport, String culture, String society, String politics, String economics, String others, String actualNews, String readFull, Locale localeCulture, String siteName) {
         this.authorization = authorization;
         this.registration = registration;
         this.search = search;
@@ -48,6 +49,7 @@ public class Control {
         this.actualNews = actualNews;
         this.readFull = readFull;
         this.localeCulture = localeCulture;
+        this.siteName = siteName;
     }
 
     public Control() {
