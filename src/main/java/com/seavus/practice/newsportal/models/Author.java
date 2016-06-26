@@ -24,7 +24,7 @@ public class Author {
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
 
-    private String login;
+    private String name;
 
     @JsonIgnore
     private String password;
@@ -35,8 +35,8 @@ public class Author {
         this.password = PASSWORD_ENCODER.encode(password);
     }
 
-    public Author(String login, String password, String...roles) {
-        this.login = login;
+    public Author(String name, String password, String...roles) {
+        this.name = name;
         this.setPassword(password);
         this.roles = roles;
     }

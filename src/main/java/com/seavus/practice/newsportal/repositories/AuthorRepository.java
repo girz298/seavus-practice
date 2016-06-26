@@ -12,6 +12,6 @@ public interface AuthorRepository extends Repository<Author, String> {
 
     Author save(Author author);
 
-    Author findByLogin(String login);
+    Author findByName(String login);
 
 }

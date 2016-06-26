@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,19 +53,43 @@ public class DatabaseLoader implements CommandLineRunner {
         Article article = new Article("EU referendum: Osborne warns of Brexit budget cuts", "George "+
                 " Osborne says he will have to slash public spending and increase "+
                 " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
-                " European Union.", authorProfile, LocalDateTime.now());
-        Article article1 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
+                " European Union.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
+        Article article1 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
         Article article2 = new Article("US charges Chinese ex-IBM worker with espionage", "The Department of Justice did not name the employer, but it is widely reported to be software developer IBM.\n" +
-                "Mr Xu intended to sell the code for his own profit and for the benefit of the Chinese government, authorities said.", authorProfile, LocalDateTime.now());
+                "Mr Xu intended to sell the code for his own profit and for the benefit of the Chinese government, authorities said.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
         List<Comment> articleComments = new ArrayList<>();
-        Article article3 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
-        Article article4 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
-        Article article5 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
-        Article article6 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
-        Article article7 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy <h2>into</h2> was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, LocalDateTime.now());
+        Article article3 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
+        Article article4 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
+        Article article5 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
+        Article article6 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
+        Article article7 = new Article("Alligator drags boy into water near Orlando Disney resort", "The boy <h2>into</h2> was on the shoreline of the Seven Seas Lagoon by the Disney Grand Floridian Resort and Spa in Orlando when he was dragged away late on Tuesday, officials said.", authorProfile, "EU referendum: Osborne warns of Brexit budget cuts", "George "+
+                " Osborne says he will have to slash public spending and increase "+
+                " taxes in an emergency Budget to tackle a £30bn \"black hole\" if the UK votes to leave the "+
+                " European Union.");
 
-        articleComments.add(new Comment("amazing text1", LocalDateTime.now(), authorProfile, article));
-        articleComments.add(new Comment("amazing text2", LocalDateTime.now(), authorProfile, article));
+        articleComments.add(new Comment("amazing text1", authorProfile, article));
+        articleComments.add(new Comment("amazing text2", authorProfile, article));
         article.setCommentaries(articleComments);
         List<Article> articles = new ArrayList<>();
         articles.add(article);

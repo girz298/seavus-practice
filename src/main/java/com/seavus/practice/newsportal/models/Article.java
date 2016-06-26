@@ -5,7 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +24,10 @@ public class Article {
     private String header;
     @Lob
     private String text;
-    private LocalDateTime lastEditedOn;
+    @Lob
+    private String textPreview;
+    private String previewImageURL;
+    private long lastEditedOn;
 
     @ManyToOne(fetch=FetchType.LAZY, cascade =
             {
@@ -44,11 +47,13 @@ public class Article {
     @ManyToMany(mappedBy = "belongsToArticles", fetch= FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Tag> articleTags = new ArrayList<>();
 
-    public Article(String header, String text, AuthorProfile author, LocalDateTime lastEditedOn) {
+    public Article(String header, String text, AuthorProfile author, String previewImageURL, String textPreview) {
         this.header = header;
         this.text = text;
         this.author = author;
-        this.lastEditedOn = lastEditedOn;
+        this.lastEditedOn = Instant.now().getEpochSecond();
+        this.previewImageURL = previewImageURL;
+        this.textPreview = textPreview;
     }
 
     public Article() {

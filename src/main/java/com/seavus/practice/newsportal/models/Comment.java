@@ -5,7 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.Instant;
 
 /**
  * Created by MK on 10.06.2016.
@@ -21,7 +21,7 @@ public class Comment {
     private String id;
     @Lob
     private String text;
-    private LocalDateTime leftOn;
+    private long leftOn;
 
     @ManyToOne(fetch=FetchType.LAZY, optional = false, cascade =
             {
@@ -41,9 +41,9 @@ public class Comment {
     @JoinColumn(name = "article_id")
     private Article relatedToArticle;
 
-    public Comment(String text, LocalDateTime leftOn, AuthorProfile commentator, Article relatedToArticle) {
+    public Comment(String text, AuthorProfile commentator, Article relatedToArticle) {
         this.text = text;
-        this.leftOn = leftOn;
+        this.leftOn = Instant.now().getEpochSecond();
         this.commentator = commentator;
         this.relatedToArticle = relatedToArticle;
     }
