@@ -58,15 +58,16 @@ select
 }
 textarea
 {
-    margin-left: 40px;
+    position: relative;
+    margin-left: 190px;
     border:1px solid graytext;
     background: #ebeff1; 
     box-shadow: 0 0 10px graytext;
     border-radius: 3px;
 }
-label, .title
+label, .news>h3
 {
-    position:relative;
+   position:relative;
    font-weight:normal;
    font-size: 18pt;
    width: 240px;
@@ -80,3 +81,32 @@ label, .title
    height:30px; 
 }
 
+.load-file
+{
+    border: 0px;
+    opacity: 0;
+    filter: alpha (opacity = 0);
+}
+.fieldNameFile
+{
+    border:0;
+    background: #d7dce2; 
+}
+#image_preview {
+    border: 0;
+    width: 100px;
+    height: 100px;
+}
+.dropzone
+{
+    border:1px solid graytext;
+    background: #ebeff1; 
+    box-shadow: 0 0 10px graytext;
+    border-radius: 3px;
+}
+
+.media-object
+{
+   width : 80 px ;
+   height: 50px; 
+}

@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dropzone.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/styleAdd.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -19,7 +20,7 @@
     <![endif]-->
   </head>
   <body>
-     <header data-spy="affix" data-offset-top="120">
+     <header data-spy="affix" data-offset-top="150">
     <div class ="page-header container-fluid">
         <div class="exit">
         <a href="index.html" class="navbar-link">Выход</a>
@@ -59,7 +60,7 @@
               <div class="col-lg-6 col-md-6 col-sm-12 news">
                   <h2>Добавление новости</h2>
                   </br></br>
-                  <form name="formAddingNews">
+                <form name="formAddingNews">
                       <label>Заголовок
                   <input type="text" name ="nameArticle" class="form" placeholder ="Название статьи">
                       </label>
@@ -80,22 +81,57 @@
                       <input  type="text" name ="tagArticle" class="form" placeholder ="Тег для поиска">   
                       </label>
                       </br></br>
-                      <div class="title">
-                      Содержание статьи</br></br>
-                          <textarea name="TextArticle"  cols="40">
-                          </textarea></br></br>
-                      </div>
+                      <h3>
+                          Содержание статьи</h3>
                       </br></br>
-                  </form>
+                      <textarea name="TextArticle" rows="10"  cols="60">
+                      </textarea></br></br>
+                      <h3>
+                      Главное фото статьи
+                      </h3>
+                     <!-- <a href="#" class="navbar-link">-->
+                     <label class="uploadField">
+                          <span class="glyphicon glyphicon-paperclip" aria-hidden="true">
+                          </span>
+                          Загрузите фото
+                          <div id="image" hidden="false"><img alt="" id="image_preview" draggable= “true”></div>
+                          <input type="file" class="load-file" id="fileMain" name="mainImage">
+                          <progress value="0" max="100" id="progressBar" hidden="false"></progress>
+                          <input type="text"  class="fieldNameFile" >
+                        </label><!--</a>-->
+                        <h3>Дополнительные фото к статье</h3>
+                        </form>
+                        </br>
+                        <form  class="dropzone" id="my-awesome-dropzone" action="/file-upload">
+                        </form></br></br>
+                 
               </div>
               <div class="col-lg-6 col-md-6 col-sm-12 preview" >
                   <h2>Превью новости</h2>
+                  </br></br>
+                  <h3>Имя заголовка</h3>
+                  <div class="media">
+                      <div class="media-left">
+                              <img class="media-object" src="images/foto.jpg" alt="..." width="160" height="160">
+                      </div>
+                      <div class="media-body">
+                          Тут отображается текст, который будет вводиться пользователем
+                     Мы также считаем, что вы должны иметь возможность использовать все плагины Bootstrap 
+                     чисто на JavaScript API. Все публичные API являются одиночными, но 
+                     их методы могут последовательно связываться и возвращать готовый набор для применения.
+                      <div class="media-body">
+                          <img class="media-object" src="images/foto.jpg">
+                      </div>
+                           </div>
+                  </div>
               </div>
           </div>
       </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/dropzone.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="scriptAdding.js"></script>
   </body>
 </html>
