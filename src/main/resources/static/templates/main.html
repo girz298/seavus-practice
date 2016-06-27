@@ -18,10 +18,12 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="news-block"  ng-repeat="mainNews in news">
-                <img src="images/foto.jpg" width="250" height="200">
+        <div class="news-block"  ng-repeat="mainNews in news | filter:{header:querry}">
+                <a href="#/articles/{{mainNews.id}}">
+                    <img ng-src="{{mainNews.previewImageURL}}"  width="250" height="200">
+                </a>
                 <h2>{{mainNews.header}}</h2>
-                <h5>{{mainNews.text}}</h5>
+                <h5>{{mainNews.textPreview}}</h5>
                 <p>{{mainNews.lastEditedOn+"000" | date:'dd.MM.yyyy'}}</p>
                 <a href="#/articles/{{mainNews.id}}"><h3>{{ 'READ_FULL' | translate }}</h3></a>
         </div>

@@ -29,6 +29,7 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider, $
 			$scope.getingStatus = false;
 			$http.get("/api/tags/"+$stateParams.categoryId+"/belongsToArticles").success(function (data, status, headers, config) {
 			    $scope.news = data._embedded.articles;
+			    $scope.actualNews = $scope.news.slice(0,6);
 			    $scope.getingStatus = true;
 		    }).error(function () {
 	 	    	$scope.getingStatus = false;
@@ -38,13 +39,8 @@ newsApp.config(function($stateProvider, $urlRouterProvider, $locationProvider, $
 	.state('addnews',{
 		url: '/addnews',
 		templateUrl: 'templates/add-news.html',
-		controller: function($scope,$http,$stateParams,wizMarkdownSvc){
-			$scope.sendBtnListener = function(){
-				console.log($scope.mdDirective);
-				console.log(wizMarkdownSvc.Transform($scope.mdDirective));
-				$http.post('/api/articles', {'header':$scope.mdDirective.slice(1,45),'text':wizMarkdownSvc.Transform($scope.mdDirective),'lastEditedOn': new Date().getTime()/1000});
-			}
-		}
+		controller: 'addNewsCtrl'
+
 	})
 	.state('full-article',{
 		url: '/articles/:articleId',

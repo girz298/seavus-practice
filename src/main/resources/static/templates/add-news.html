@@ -1,7 +1,33 @@
 <div class="left-side">
+	<div class="form-group">
+		<label for="usr">Header:</label>
+		<input type="text" ng-model="header" class="form-control" id="usr">
+	</div>
+
+   <div class="form-group">
+     <label for="comment">Preview text:</label>
+     <textarea class="form-control" ng-model="text" rows="5" id="comment"></textarea>
+   </div>
+
 	<textarea class="form-control" rows="18" ng-model="mdDirective"></textarea>
 	<button type="button" href="#/" ng-click="sendBtnListener()" class="btn btn-primary">Отправить</button>
 </div>
+
 <div class="right-side">
-	<wiz-markdown content="mdDirective"></wiz-markdown>
+	<div class="preview-block">
+		<div class="image-left" ondrop="dropListener()">
+			<img src="" id="link"> 
+		</div>
+
+		<div class="preview-content">
+			<h1>{{header}}</h1>
+			<p>{{text}}</p>
+		</div>
+	</div>
+	
+
+	<div class="markdown-block">
+		<wiz-markdown content="mdDirective"></wiz-markdown>
+	</div>
+	
 </div>

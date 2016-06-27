@@ -87,13 +87,15 @@ h1.navbar-text
     border: 0.5px solid black;
     margin-top: -1px;
 }
-.news-block >img
+.news-block img
 {
     float:left;
     width: 250px;
     height:200px;
     margin-left: 10px;
     margin-top: 10px;
+    border-radius: 6px; 
+    margin-right: 20px;
 }
 .news-block >h2
 {
@@ -124,6 +126,8 @@ h1.navbar-text
 {
     color:black;
 }
+
+
 .actual-news
 {
     padding-top: 5%;
@@ -202,12 +206,14 @@ h1.navbar-text
 }
 
 .left-side{
+    margin-left: 3px;
     /*background-color: red;*/
     padding: 0;
     margin: 0;
     float: left;
     width: 50%;
     height: 100%;
+    padding-right: 3px;
 }
 
 .left-side >textarea {
@@ -216,14 +222,15 @@ h1.navbar-text
 }
 
 .right-side{
-    padding-right: 2px;
+    margin-right: 3px;
+    padding-left: 3px;
     /*background-color: green;*/
     padding: 0;
     margin: 0;
     float: right;
     width: 50%;
     height: 100%;
-    border-left: solid 2px black;
+
 }
 .right-side img {
     width: 100%;
@@ -241,4 +248,34 @@ h1.navbar-text
 .full-news img{
     width: 100%;
     height: 100%;
+}
+
+.image-left{
+    width: 30%;
+    height: 200px;
+    background-color: rgba(245,245,245,0.31);
+    float: left;
+}
+
+.image-left img{
+    border-radius: 5px;
+}
+
+.preview-content{
+    width: 69%;
+    padding-left: 15px;
+    float: right;
+}
+
+.preview-block{
+    width: 100%;
+    display: flex;
+    border:solid 2px black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.markdown-block{
+    width: 100%;
+    float: left;
 }
