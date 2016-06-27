@@ -243,6 +243,16 @@ h1.navbar-text
     margin: 0;
     padding: 2px;
     border-radius: 12px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.full-news ul {
+    padding-left: 25px;
+}
+
+.full-news ol {
+    padding-left: 25px;
 }
 
 .full-news img{
@@ -275,7 +285,17 @@ h1.navbar-text
     border-radius: 5px;
 }
 
+
+
 .markdown-block{
     width: 100%;
     float: left;
+}
+
+.markdown-block ul {
+    padding-left: 25px;
+}
+
+.markdown-block ol {
+    padding-left: 25px;
 }
