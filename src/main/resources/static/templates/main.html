@@ -1,6 +1,6 @@
     <div class="container-fluid">
         <div class="col-lg-8">
-            <div class="jumbotron" style="height:500px;background: url(images/foto.jpg);background-size: 1920px 500px">
+            <div class="jumbotron" style="height:500px;background: url(https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-400591.jpg);background-size: 1920px 500px">
                 <h1 align="right">{{ 'PHOTO_OF_THE_DAY' | translate }}</h1>
             </div>
         </div>
@@ -10,7 +10,7 @@
                     <div class="list-group" >
 
                         <a href="#/articles/{{mainNews.id}}" class="list-group-item"  ng-repeat="mainNews in actualNews" >
-                            <h4 class="list-group-item-heading">{{mainNews.header.slice(0,42)+"..."}}</h4>
+                            <h4 class="list-group-item-heading">{{mainNews.header.slice(0,30)+"..."}}</h4>
                             <p class="list-group-item-text">{{mainNews.lastEditedOn+"000" | date:'dd.MM.yyyy'}}</p>
                         </a>
                     </div>  
